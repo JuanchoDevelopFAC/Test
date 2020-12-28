@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.Views.UserView"
+             Title="Login">
+
+    <ContentPage.Content>
+        <StackLayout Padding="40">
+            <Frame CornerRadius="100"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   IsClippedToBounds="True">
+                <Image Source="{Binding Image}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <StackLayout Padding="0,40,0,0" Spacing="20">
+                <Label Text="Email"/>
+                <Entry Text="{Binding EntryEmail}"  Placeholder="Put your email" Keyboard="Email"/>
+                <Label Text="Password"/>
+                <Entry Text="{Binding EntryPassword}" Placeholder="Put your password" IsPassword="True" Keyboard="Numeric"/>
+                <Button Text="Login System" Command="{Binding LoginCommand}"/>
+                <Label Text="{Binding Date}"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

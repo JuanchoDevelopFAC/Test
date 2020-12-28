@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Test.Views"
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             x:Class="Test.Views.ListCurrencyView"
+             Title="List Currency">
+
+    <ContentView>
+        <dg:DataGrid ItemsSource="{Binding Currency}"
+                     SelectionEnabled="True"
+                     RowHeight="70"
+                     HeaderHeight="50"
+                     BorderColor="#CCCCCC"
+                     HeaderBackground="#E0E6F8"
+                     ActiveRowColor="#8899AA">
+            <x:Arguments>
+                <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+            </x:Arguments>
+            <dg:DataGrid.HeaderFontSize>
+                <OnIdiom x:TypeArguments="x:Double">
+                    <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                    <OnIdiom.Phone>12</OnIdiom.Phone>
+                </OnIdiom>
+            </dg:DataGrid.HeaderFontSize>
+            <dg:DataGrid.Columns>
+                <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
+                <dg:DataGridColumn Title="Coin" PropertyName="Coin" Width="2*"/>
+                <dg:DataGridColumn Title="Exchange Rate" PropertyName="ExchangeRate" Width="2*"/>
+            </dg:DataGrid.Columns>
+        </dg:DataGrid>
+    </ContentView>
+
+</ContentPage>
